@@ -41,6 +41,7 @@ namespace Com.MyCompany.MyGame
         private GameObject beams;
 
         [SerializeField] string triggeringTag;
+
         //True, when the user is firing
         bool IsFiring;
 
@@ -68,6 +69,7 @@ namespace Com.MyCompany.MyGame
             {
                 LocalPlayerInstance = gameObject;
             }
+
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(gameObject);
@@ -124,19 +126,10 @@ namespace Com.MyCompany.MyGame
         /// </summary>
         public void OnTriggerEnter(Collider other)
         {
-            if (!photonView.IsMine)
+            if (other.tag == triggeringTag && photonView.IsMine)
             {
-                return;
+                this.Health -= 0.1f;
             }
-
-
-            // We are only interested in Beamers
-            if (other.tag != triggeringTag)
-            {
-                return;
-            }
-
-            this.Health -= 0.1f;
         }
 
         /// <summary>
@@ -146,23 +139,13 @@ namespace Com.MyCompany.MyGame
         /// <param name="other">Other.</param>
         public void OnTriggerStay(Collider other)
         {
-            // we dont' do anything if we are not the local player.
-            if (!photonView.IsMine)
+            if (other.tag == triggeringTag && photonView.IsMine)
             {
-                return;
+                // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
+                this.Health -= 0.1f * Time.deltaTime;
             }
-
-            // We are only interested in Beamers
-            // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (other.tag != triggeringTag)
-            {
-                return;
-            }
-
-            // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
-            this.Health -= 0.1f * Time.deltaTime;
         }
-        
+
         #endregion
 
         #region Private Methods
