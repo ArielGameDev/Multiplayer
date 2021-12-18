@@ -24,6 +24,8 @@ namespace Com.MyCompany.MyGame
     {
         #region Public Fields
 
+        public int score = 0;
+
         [Tooltip("The current Health of our player")]
         public float Health = 1f;
 
@@ -61,6 +63,7 @@ namespace Com.MyCompany.MyGame
             else
             {
                 this.beams.SetActive(false);
+                this.beams.GetComponent<BeamScorer>().playerManager = this;
             }
 
             // #Important

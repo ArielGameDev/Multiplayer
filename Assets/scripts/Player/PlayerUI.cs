@@ -16,6 +16,10 @@ namespace Com.MyCompany.MyGame
         [SerializeField]
         private Text playerNameText;
 
+        [SerializeField]
+        private Text playerScoreText;
+
+
 
         [Tooltip("UI Slider to display Player's Health")]
         [SerializeField]
@@ -52,6 +56,7 @@ namespace Com.MyCompany.MyGame
             if (playerHealthSlider != null)
             {
                 playerHealthSlider.value = target.Health;
+                playerScoreText.text = "Score: " + target.score.ToString();
             }
         }
         void LateUpdate()
