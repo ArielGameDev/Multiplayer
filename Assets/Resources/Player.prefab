@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  Health: 1
+  Health: 1.5
   playerUiPrefab: {fileID: 1445000400809041852, guid: 29e06fb6c2b82d14098e6629ef1e5cbf, type: 3}
   beams: {fileID: 7439903803677311857}
   triggeringTag: Beam
