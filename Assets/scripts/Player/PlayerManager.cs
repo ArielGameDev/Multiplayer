@@ -31,16 +31,15 @@ namespace Com.MyCompany.MyGame
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
-
+        
+        [Tooltip("The Beams GameObject to control")] [SerializeField]
+        public GameObject beams;
         #endregion
 
         #region Private Fields
 
         [Tooltip("The Player's UI GameObject Prefab")] [SerializeField]
         private GameObject playerUiPrefab;
-
-        [Tooltip("The Beams GameObject to control")] [SerializeField]
-        private GameObject beams;
 
         [SerializeField] string triggeringTag;
 

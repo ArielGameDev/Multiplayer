@@ -291,8 +291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   Health: 1.5
-  playerUiPrefab: {fileID: 1445000400809041852, guid: 29e06fb6c2b82d14098e6629ef1e5cbf, type: 3}
   beams: {fileID: 7439903803677311857}
+  playerUiPrefab: {fileID: 1445000400809041852, guid: 29e06fb6c2b82d14098e6629ef1e5cbf, type: 3}
   triggeringTag: Beam
 --- !u!114 &-2254791364717599843
 MonoBehaviour:
