@@ -556,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cc48f558c637046bc2f818411ca209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_triggerTag: Player
   playerManager: {fileID: 2557017311148351012}
   scoreOnHit: 1
 --- !u!54 &554686776508916732
